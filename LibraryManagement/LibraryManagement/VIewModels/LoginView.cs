@@ -5,17 +5,13 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace LibraryManagement.Models
+namespace LibraryManagement.VIewModels
 {
-    public class User
+    public class LoginView
     {
         [Key, Required]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
-
-        [Required]
-        [StringLength(50)]
-        public string Name { get; set; }
 
         [Required]
         [StringLength(100)]
@@ -24,16 +20,5 @@ namespace LibraryManagement.Models
         [Required]
         [StringLength(50)]
         public string Password { get; set; }
-
-        [Required]
-        [StringLength(100)]
-        public string Address { get; set; }
-
-        [Required]
-        [StringLength(10)]
-        public String UserType { get; set; }
-        public ICollection<UserBook> UserBook { get; set; }
-
-
     }
 }

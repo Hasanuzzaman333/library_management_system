@@ -8,6 +8,8 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using LibraryManagement;
+using Microsoft.Extensions.DependencyInjection;
+using LibraryManagement.Models;
 
 namespace LibraryManagement
 {
@@ -15,7 +17,24 @@ namespace LibraryManagement
     {
         public static void Main(string[] args)
         {
-            CreateWebHostBuilder(args).Build().Run();
+            var host = CreateWebHostBuilder(args).Build();
+            using (var services = host.Services.CreateScope())
+            {
+                var dbContext = services.ServiceProvider.GetRequiredService<DemoContext>();
+                var u = dbContext.Users.Where(x => x.UserType == "admin").FirstOrDefault();
+                if (u == null)
+                {
+                    User user = new User();
+                    user.Name = "Admin";
+                    user.Email = "Admin@gmail.com";
+                    user.Address = "Dhaka";
+                    user.UserType = "admin";
+                    dbContext.Users.Add(user);
+                    dbContext.SaveChanges();
+                }
+
+            }
+            host.Run();
         }
 
         public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>

@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using LibraryManagement.VIewModels;
 
 namespace LibraryManagement
 {
@@ -34,5 +35,6 @@ namespace LibraryManagement
         public DbSet<User> Users { get; set; }
         public DbSet<Book> Books { get; set; }
         public DbSet<UserBook> UserBooks { get; set; }
+        public DbSet<LibraryManagement.VIewModels.LoginView> LoginView { get; set; }
     }
 }
