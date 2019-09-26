@@ -37,3 +37,8 @@ F:\Study\Core\Library management system2\library_management_system\LibraryManage
 F:\Study\Core\Library management system2\library_management_system\LibraryManagement\LibraryManagement\obj\Debug\netcoreapp2.2\Razor\Views\Users\Index.g.cshtml.cs
 F:\Study\Core\Library management system2\library_management_system\LibraryManagement\LibraryManagement\obj\Debug\netcoreapp2.2\Razor\Views\Student\Index.g.cshtml.cs
 F:\Study\Core\Library management system2\library_management_system\LibraryManagement\LibraryManagement\obj\Debug\netcoreapp2.2\Razor\Views\Admin\Index.g.cshtml.cs
+F:\Study\Core\Library management system2\library_management_system\LibraryManagement\LibraryManagement\obj\Debug\netcoreapp2.2\Razor\Views\Books\Create.g.cshtml.cs
+F:\Study\Core\Library management system2\library_management_system\LibraryManagement\LibraryManagement\obj\Debug\netcoreapp2.2\Razor\Views\Books\Delete.g.cshtml.cs
+F:\Study\Core\Library management system2\library_management_system\LibraryManagement\LibraryManagement\obj\Debug\netcoreapp2.2\Razor\Views\Books\Details.g.cshtml.cs
+F:\Study\Core\Library management system2\library_management_system\LibraryManagement\LibraryManagement\obj\Debug\netcoreapp2.2\Razor\Views\Books\Edit.g.cshtml.cs
+F:\Study\Core\Library management system2\library_management_system\LibraryManagement\LibraryManagement\obj\Debug\netcoreapp2.2\Razor\Views\Books\Index.g.cshtml.cs
