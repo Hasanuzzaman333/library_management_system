@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace LibraryManagement.Repository
 {
-    interface IRepository<T> where T : class
+    public interface IRepository<T> where T : class
     {
         void Add(T entity);
 

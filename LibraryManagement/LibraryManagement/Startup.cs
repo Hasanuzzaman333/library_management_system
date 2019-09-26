@@ -12,6 +12,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using LibraryManagement.Repository;
+using LibraryManagement.Models;
 
 namespace LibraryManagement
 {
@@ -37,14 +39,15 @@ namespace LibraryManagement
             services.AddDbContext<DemoContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"))
             );
+
+            services.AddScoped<IRepository<User>, UserRepository<User>>();
+            //services.AddScoped<ICourseRepository, CourseRepository>();
+
             //for session ...
             services.AddDistributedMemoryCache();
             services.AddSession(options => {
                 options.IdleTimeout = TimeSpan.FromMinutes(3600);//You can set Time   
             });
-            //services.AddScoped<IStudentRepository, StudentRepository>();
-            //services.AddScoped<ICourseRepository, CourseRepository>();
-
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
 

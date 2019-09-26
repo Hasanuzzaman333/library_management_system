@@ -35,7 +35,7 @@ namespace LibraryManagement.Controllers
             HttpContext.Session.SetString("SessionRole", "student");
             HttpContext.Session.SetInt32("SessionId", id);
 
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Index", "Student");
         }
         public IActionResult Login()
         {
@@ -51,12 +51,24 @@ namespace LibraryManagement.Controllers
                 HttpContext.Session.SetString("SessionName", u.Name);
                 HttpContext.Session.SetString("SessionRole", u.UserType);
                 HttpContext.Session.SetInt32("SessionId", u.Id);
-
-                return RedirectToAction("Index", "Home");
+                if (u.UserType == "admin")
+                {
+                    return RedirectToAction("Index", "Admin");
+                }
+                else
+                {
+                    return RedirectToAction("Index", "Student");
+                }
+                
             }
             return View();
         }
 
+        public IActionResult Logout()
+        {
+            HttpContext.Session.Clear();
+            return RedirectToAction("Index", "Home");
+        }
         //public IActionResult Privacy()
         //{
         //    return View();
