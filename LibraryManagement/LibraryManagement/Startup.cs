@@ -37,16 +37,11 @@ namespace LibraryManagement
             services.AddDbContext<DemoContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"))
             );
-            //services.AddIdentity<IdentityUser, IdentityRole>(options =>
-            //{
-            //    options.Password.RequireDigit = false;
-            //    options.Password.RequireNonAlphanumeric = false;
-            //    options.Password.RequireUppercase = false;
-            //    options.Password.RequiredLength = 6;
-            //})
-                //.AddDefaultUI(UIFramework.Bootstrap4)
-                //.AddEntityFrameworkStores<DemoContext>();
-
+            //for session ...
+            services.AddDistributedMemoryCache();
+            services.AddSession(options => {
+                options.IdleTimeout = TimeSpan.FromMinutes(3600);//You can set Time   
+            });
             //services.AddScoped<IStudentRepository, StudentRepository>();
             //services.AddScoped<ICourseRepository, CourseRepository>();
 
@@ -73,7 +68,7 @@ namespace LibraryManagement
             app.UseCookiePolicy();
 
             app.UseAuthentication();
-
+            app.UseSession();
             app.UseMvc(routes =>
             {
                 routes.MapRoute(

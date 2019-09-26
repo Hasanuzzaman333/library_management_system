@@ -30,3 +30,8 @@ F:\Study\Core\Library management system2\library_management_system\LibraryManage
 F:\Study\Core\Library management system2\library_management_system\LibraryManagement\LibraryManagement\obj\Debug\netcoreapp2.2\LibraryManagement.csproj.CopyComplete
 F:\Study\Core\Library management system2\library_management_system\LibraryManagement\LibraryManagement\obj\Debug\netcoreapp2.2\Razor\Views\Home\CreateAccount.g.cshtml.cs
 F:\Study\Core\Library management system2\library_management_system\LibraryManagement\LibraryManagement\obj\Debug\netcoreapp2.2\Razor\Views\Home\Login.g.cshtml.cs
+F:\Study\Core\Library management system2\library_management_system\LibraryManagement\LibraryManagement\obj\Debug\netcoreapp2.2\Razor\Views\Users\Create.g.cshtml.cs
+F:\Study\Core\Library management system2\library_management_system\LibraryManagement\LibraryManagement\obj\Debug\netcoreapp2.2\Razor\Views\Users\Delete.g.cshtml.cs
+F:\Study\Core\Library management system2\library_management_system\LibraryManagement\LibraryManagement\obj\Debug\netcoreapp2.2\Razor\Views\Users\Details.g.cshtml.cs
+F:\Study\Core\Library management system2\library_management_system\LibraryManagement\LibraryManagement\obj\Debug\netcoreapp2.2\Razor\Views\Users\Edit.g.cshtml.cs
+F:\Study\Core\Library management system2\library_management_system\LibraryManagement\LibraryManagement\obj\Debug\netcoreapp2.2\Razor\Views\Users\Index.g.cshtml.cs

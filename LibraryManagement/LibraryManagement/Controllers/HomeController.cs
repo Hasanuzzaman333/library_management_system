@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using LibraryManagement.Models;
 using LibraryManagement.VIewModels;
+using Microsoft.AspNetCore.Http;
 
 namespace LibraryManagement.Controllers
 {
@@ -29,6 +30,11 @@ namespace LibraryManagement.Controllers
         {
             _demoContext.Users.Add(user);
             _demoContext.SaveChanges();
+            int id = _demoContext.Users.Max(x => x.Id);
+            HttpContext.Session.SetString("SessionName", user.Name);
+            HttpContext.Session.SetString("SessionRole", "student");
+            HttpContext.Session.SetInt32("SessionId", id);
+
             return RedirectToAction("Index", "Home");
         }
         public IActionResult Login()
@@ -42,15 +48,19 @@ namespace LibraryManagement.Controllers
                     && x.Password == loginView.Password).FirstOrDefault();
             if(u != null)
             {
+                HttpContext.Session.SetString("SessionName", u.Name);
+                HttpContext.Session.SetString("SessionRole", u.UserType);
+                HttpContext.Session.SetInt32("SessionId", u.Id);
+
                 return RedirectToAction("Index", "Home");
             }
             return View();
         }
 
-        public IActionResult Privacy()
-        {
-            return View();
-        }
+        //public IActionResult Privacy()
+        //{
+        //    return View();
+        //}
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
